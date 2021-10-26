@@ -14,6 +14,8 @@ namespace ConsoleAppSeleniumTest
             driver.Navigate().GoToUrl(@"http://127.0.0.1:5500/start/index.html");
             System.Console.WriteLine("driver url:" + driver.Url);
 
+            //documentation for finding elements : https://www.selenium.dev/documentation/webdriver/locating_elements/
+
             IWebElement Inputelement1 = driver.FindElement(By.Id("input1"));
 
 
