@@ -13,7 +13,6 @@ namespace ConsoleAppSeleniumTest
 
             driver.Navigate().GoToUrl(@"http://127.0.0.1:5500/start/index.html");
             System.Console.WriteLine("driver url:" + driver.Url);
-            IWebElement element = driver.FindElement(By.Id("app"));
 
             IWebElement Inputelement1 = driver.FindElement(By.Id("input1"));
 
@@ -38,6 +37,18 @@ namespace ConsoleAppSeleniumTest
             //find element by id 
             IWebElement button2Element = driver.FindElement(By.Id("testButton2"));
             button2Element.Click();
+
+            //press the button five times
+            for (int i = 0; i < 2; i++)
+            {
+                //send input to the input field
+                button2Element.Click();
+            }
+
+            //find an element by id and the find an element inside this with tagname
+            IWebElement element2 = driver.FindElement(By.Id("app")).FindElement(By.TagName("Button"));
+            Console.WriteLine("text: " + element2.Text);
+            Console.WriteLine("END!");
 
 
             Console.WriteLine("press to quit driver");
