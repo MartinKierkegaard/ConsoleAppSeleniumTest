@@ -11,7 +11,7 @@ namespace ConsoleAppSeleniumTest
             Console.WriteLine("Hello Selenium!");
             IWebDriver driver = new FirefoxDriver();
 
-            driver.Navigate().GoToUrl(@"http://127.0.0.1:5501/start/index.html");
+            driver.Navigate().GoToUrl(@"http://127.0.0.1:5500");
 
             System.Console.WriteLine("driver url:" + driver.Url);
 
