@@ -31,7 +31,9 @@ namespace ConsoleAppSeleniumTest
             for (int i = 0; i < 3; i++)
             {
                 //send input to the input field
-                Inputelement1.SendKeys("hello from selenium"); 
+                Inputelement1.SendKeys("hello from selenium");
+                //wait 500 ms
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
             }
 
             //click the button
@@ -42,10 +44,13 @@ namespace ConsoleAppSeleniumTest
             button2Element.Click();
 
             //press the button five times
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 5; i++)
             {
                 //send input to the input field
                 button2Element.Click();
+                //wait
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
+                Console.WriteLine("i: "+i);
             }
 
             //find an element by id and the find an element inside this with tagname
